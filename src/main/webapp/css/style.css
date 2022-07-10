@@ -1,0 +1,14 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.login-btn{
+    width: 25%;
+}
+.entrada-form {
+    width: 50%;
+}
+.navigation{
+    width: 100%;
+    max-width: 1920px;
+}
