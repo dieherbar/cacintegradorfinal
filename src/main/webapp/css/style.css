@@ -1,6 +1,7 @@
 *{
-    padding: 0%;
-    margin: 0%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
 }
 .login-btn, .entrada-form{
     width: 50%;
@@ -27,4 +28,30 @@
 .top-image{
     opacity: 0.75;
 }
-  
+.test{
+    background-position: 50%;
+    background-image: url("../images/ciudad2.png");
+    background-color: #C1C5D1;
+    height: 33vw;
+    background-repeat: no-repeat;
+    opacity: .7;
+}
+.image{
+    opacity: .5;
+    width: 100%;
+    background-origin: border-box;
+    
+}
+.imgusrok{
+    background-position: 50%;
+    background-image: url("../images/matrix-codigo.webp");
+    background-color: black;
+    height: 33vw;
+    background-repeat: no-repeat;
+    opacity: .9;
+
+}
+
+.datosTarjeta, .datosOperacion{
+	display: none;
+}
