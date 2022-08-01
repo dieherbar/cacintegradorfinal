@@ -18,7 +18,7 @@
 <div class=" navigation">
     <nav class="nav navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Java Final</a>
+        <a class="navbar-brand" >Java Final</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -59,11 +59,11 @@
 <div class="text-center container text-center text-capitalize fw-bold pt-5">
 <h1 class="h1 text-muted">Listado de Pedidos</h1>
 </div>
-<div class="container"  >
+<div class="p-2"  >
 <table class="table table-striped">
 <thead>
   <tr>
-    <th>Id</th>
+<!--     <th>Id</th> -->
     <th>Nombre</th>
     <th>Apellido</th>
     <th>Usuario</th>
@@ -85,10 +85,11 @@ PedidoDao pedidao = new PedidoDao();
 List<Pedido> listpedi = PedidoDao.getAllPedi();
 
 for(Pedido ped:listpedi){
+	
     	//id
-		out.println("<td>");
+		/* out.println("<td>");
 		out.println(ped.getIdPedido());
-		out.println("</td>");
+		out.println("</td>"); */
 		
 		//nombre
 		out.println("<td>");
@@ -140,9 +141,10 @@ for(Pedido ped:listpedi){
 		out.println(ped.getTarjtitular());
 		out.println("</td>");
 		
-		//numero tarjeta
+		//numero tarjeta 
+		String str = Double.toString(ped.getTarjnumero());
 		out.println("<td>");
-		out.println(ped.getTarjnumero());
+		out.println(str);
 		out.println("</td>");
 		
 		//vto tarjeta
@@ -155,6 +157,14 @@ for(Pedido ped:listpedi){
 		out.println(ped.getTarjclave());
 		out.println("</td>");
 		
+		out.println("<td>");
+    	%>
+          <a href="editPedido.jsp?idPedido=<% out.println(ped.getIdPedido()); %>">
+          edit
+          </a>
+    	
+    	<% 
+    	out.println("</td>");
 
 		out.println("</tr>");
 }
