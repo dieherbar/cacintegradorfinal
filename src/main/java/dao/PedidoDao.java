@@ -126,7 +126,7 @@ public class PedidoDao {
 				  +  "`tarjclave`= " + pedido.getTarjclave() + 
 				  " WHERE `idPedido`=" + pedido.getIdPedido() + ";";
 				
-				System.out.println(sql);
+				//System.out.println(sql);
 		
 		Integer insertOk= st.executeUpdate(sql);
 		return insertOk >= 1;

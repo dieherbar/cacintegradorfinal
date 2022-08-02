@@ -141,12 +141,13 @@
           <div class="col-md-5 mb-3">
           
             <label for="localidad">Localidad</label>
+<%--             <input type="hidden" name="localidaddb" value="<%out.println(pedido.getLocalidad().getLocalidad());%>"> --%>
             <select class="custom-select d-block w-100" id="localidad" name="localidad" required>
-            <option value="<% out.println(pedido.getLocalidad().getLocalidad()); %>"><% out.println(pedido.getLocalidad().getLocalidad()); %></option>
+            
+            <option value="<% out.println(pedido.getLocalidad().getIdLocalidad()); %> "> <% out.println(pedido.getLocalidad().getLocalidad()); %></option>
             <%
             LocalidadDao localidadDAO = new LocalidadDao();
-                        		
-          List<Localidades> listLoc = LocalidadDao.getAllLocal();
+            List<Localidades> listLoc = LocalidadDao.getAllLocal();
             		
             		for(Localidades loca:listLoc){
             		//pcia = loca.getIdProvincia();
@@ -160,9 +161,10 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="state">Provincia (Opcional)</label>
-            <select class="custom-select d-block w-100" id="state" name="state" value="<% out.println(pedido.getProvincia()); %>">
-<option value="<% out.println(pedido.getProvincia().getProvincia()); %>"><% out.println(pedido.getProvincia().getProvincia()); %></option>
-            
+            <select class="custom-select d-block w-100" id="state" name="state"> 
+            <!--value="<% out.println(pedido.getProvincia().getIdProvincia()); %>"><% out.println(pedido.getProvincia().getProvincia()); %></option> -->
+            <option value="<% out.println(pedido.getProvincia().getIdProvincia()); %> "> <% out.println(pedido.getProvincia().getProvincia()); %></option>
+             
               <%
               ProvinciasDao provinciaD = new ProvinciasDao();
               List<Provincias> prov = provinciaD.getAllProv(); 
