@@ -74,9 +74,9 @@
 
 	<%
 	
-	String idPedido = request.getParameter("idPedido");
+	String idPed = request.getParameter("idPedido");
 	PedidoDao pedidoDAO = new PedidoDao();
-	Pedido pedido = pedidoDAO.getPedidoXId(Integer.valueOf(idPedido)); 
+	Pedido pedido = pedidoDAO.getPedidoXId(Integer.valueOf(idPed)); 
 	%>
 	
   <div class="col-md-12 text-center">
@@ -84,7 +84,8 @@
       <div class="row">
         <div class="col-md-6 mb-3">
           <label for="firstName">Nombre</label>
-		<input type="hidden" name="idPedido" value="<%out.println(pedido.getIdPedido());%>">	
+          <input type="hidden" name="idPedido" value="<%out.println(pedido.getIdPedido());%>">
+		  	
           <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Tu nombre" value="<% out.println(pedido.getNombre()); %>" required>
           <div class="invalid-feedback">
             Debe ingresar su nombre.
@@ -245,7 +246,7 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="numoper">Numero de operacion</label>
-            <input type="text" class="form-control" id="numoper" name="numoper" placeholder="" required >
+            <input type="text" class="form-control" id="numoper" name="numoper" placeholder="" >
             
             <small class="text-muted">Numero de operacion</small>
             <div class="invalid-feedback">

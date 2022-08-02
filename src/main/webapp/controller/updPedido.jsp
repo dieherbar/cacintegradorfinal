@@ -12,6 +12,8 @@
 </head>
 <body>
 <%
+String idpedido = request.getParameter("idPedido");
+//Integer idpedido = Integer.valueOf(request.getParameter("idPedido"));
 String nombre = request.getParameter("firstName");
 String apellido = request.getParameter("lastName");
 String usuario = request.getParameter("username");
@@ -26,10 +28,19 @@ String tarjeta = request.getParameter("cc-number");
 String venc = request.getParameter("cc-expiration");
 String clave = request.getParameter("cc-cvv");
 
+
+System.out.println("este es el numero:-->"+ idpedido +"<--");
+System.out.println("este es el numero2:-->"+ idpedido.trim() +"<--");
+Integer idped = Integer.valueOf(idpedido.trim());
+//idpedido = Integer.parseInt(idpedido);
+//idpedido = idpedido.replace("\n", "").replace("\r", "");
+
+
 Localidades localidad = new Localidades(Integer.valueOf(idlocalidad), null, null);
 Provincias provincia = new Provincias(Integer.valueOf(idProvincia),null);
 
-Pedido pedido = new Pedido(nombre, apellido, usuario, mail, lugarentrega, localidad, provincia, codigo, pago, titular, Double.valueOf(tarjeta), venc, Integer.valueOf(clave));
+
+Pedido pedido = new Pedido(idped,nombre, apellido, usuario, mail, lugarentrega, localidad, provincia, codigo, pago, titular, Double.valueOf(tarjeta), venc, Integer.valueOf(clave));
 
 PedidoDao dao = new PedidoDao();
 Boolean updateOk = dao.updPedido(pedido);

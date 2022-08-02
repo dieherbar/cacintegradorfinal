@@ -111,20 +111,20 @@ public class PedidoDao {
 		
 		
 		String sql = new String();
-		sql = "UPDATE `pedidos` SET `nombre` = "+ pedido.getNombre() + "'," 
-				  + "`apellido`" + pedido.getApellido() + "'," 
-				  + "`usuario`" + pedido.getUsuario() + "'," 
-				  + "`mail`" + pedido.getMail() + "'," 
-				  + "`lugarentrega`" + pedido.getLugarentrega() + "'," 
-				  + "`localidad`"+ pedido.getLocalidad().getIdLocalidad() + "," 
-				  + "`provincia`" + pedido.getProvincia().getIdProvincia() + "," 
-				  + "`codpostal`" + pedido.getCodpostal() + "'," 
-				  + "`formadepago`" + pedido.getFormadepago() + "'," 
-				  + "`tarjtitular`" + pedido.getTarjtitular() + "'," 
-				  + "`tarjnumero`" + pedido.getTarjnumero() + "," 
-				  + "`tarjvto`" + pedido.getTarjvto() + "'," 
-				  +  "`tarjclave`" + pedido.getTarjclave() + 
-				  "' WHERE `idPedido`=" + pedido.getIdPedido() + ")";
+		sql = "UPDATE `pedidos` SET `nombre` = '"+ pedido.getNombre() + "'," 
+				  + "`apellido`='" + pedido.getApellido() + "'," 
+				  + "`usuario`='" + pedido.getUsuario() + "'," 
+				  + "`mail`='" + pedido.getMail() + "'," 
+				  + "`lugarentrega`='" + pedido.getLugarentrega() + "'," 
+				  + "`localidad`="+ pedido.getLocalidad().getIdLocalidad() + "," 
+				  + "`provincia`=" + pedido.getProvincia().getIdProvincia() + "," 
+				  + "`codpostal`='" + pedido.getCodpostal() + "'," 
+				  + "`formadepago`='" + pedido.getFormadepago() + "'," 
+				  + "`tarjtitular`='" + pedido.getTarjtitular() + "'," 
+				  + "`tarjnumero`=" + pedido.getTarjnumero() + "," 
+				  + "`tarjvto`='" + pedido.getTarjvto() + "'," 
+				  +  "`tarjclave`= " + pedido.getTarjclave() + 
+				  " WHERE `idPedido`=" + pedido.getIdPedido() + ";";
 				
 				System.out.println(sql);
 		
